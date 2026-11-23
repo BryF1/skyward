@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Climb as high as you can in Skyward, an endless pixel-art platformer with coins and power-ups.">
+  <meta name="theme-color" content="#11142b">
+  <title>Skyward · Pixel Platformer</title>
+  <link rel="stylesheet" href="style.css?v=4">
+  <script defer src="game.js?v=5"></script>
+</head>
+<body>
+  <main class="game">
+    <header class="topbar">
+      <div class="wordmark"><span class="mark" aria-hidden="true">✦</span><h1>SKYWARD</h1></div>
+      <div class="route"><span class="route-dot"></span><span id="biome">THE MEADOW</span></div>
+      <button type="button" class="restart" id="restart" title="Restart (R)"><span aria-hidden="true">↻</span> Restart</button>
+    </header>
+    <section class="stage" aria-label="Skyward play field">
+      <canvas id="world" width="480" height="270" tabindex="0" aria-label="Skyward. Click to aim and jump, or use A and D to move and Space to jump."></canvas>
+      <div class="altitude" aria-label="Highest altitude">
+        <div class="alt-label">ALTITUDE</div>
+        <div class="alt-value"><span id="height">000</span><span class="unit"> m</span></div>
+      </div>
+      <div class="run-stats">
+        <div class="score"><span class="alt-label">SCORE</span><strong id="score">0</strong></div>
+        <div id="lives" class="lives" role="img" aria-label="3 of 3 hearts"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i></div>
+      </div>
+      <div class="effects" aria-label="Active power-ups">
+        <span data-effect="boots" hidden></span>
+        <span data-effect="double" hidden></span>
+        <span data-effect="jet" hidden></span>
+      </div>
+      <div id="intro" class="intro" aria-hidden="true"><strong>THE SKY<br>IS CALLING<span>.</span></strong><small>Click a platform or press Space to jump</small></div>
+      <section id="game-over" class="game-over" aria-labelledby="game-over-title" hidden>
+        <div>
+          <h2 id="game-over-title">GAME OVER<span>.</span></h2>
+          <p id="result"></p>
+          <button type="button" id="replay">Play again</button>
+        </div>
+      </section>
+    </section>
+    <footer class="controls" aria-label="Controls">
+      <div><kbd class="mouse" aria-label="Left mouse button"><i></i></kbd> <span>Click to aim &amp; jump</span></div>
+      <div><kbd>A</kbd><kbd>D</kbd> <span>Move</span></div>
+      <div><kbd class="space">SPACE</kbd> <span>Jump</span></div>
+    </footer>
+  </main>
+</body>
+</html>
